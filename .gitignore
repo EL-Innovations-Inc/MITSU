@@ -1,0 +1,15 @@
+__pycache__/
+*.pyc
+.pytest_cache/
+.DS_Store
+
+# datasets are downloaded by each experiment's get_data.sh, never committed
+experiments/01_classification/data/
+experiments/02_char_gpt/shakespeare.txt
+experiments/03_scaling_ladder/wiki_*.txt
+experiments/03_scaling_ladder/wiki_tokens.npz
+experiments/04_dial_family/data/*.gz
+experiments/04_dial_family/data/shakespeare.txt
+
+# resumable training checkpoints of the scaling ladder
+experiments/03_scaling_ladder/lad_*.npz
