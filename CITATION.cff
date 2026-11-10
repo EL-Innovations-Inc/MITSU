@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: "If you use MITSU, please cite it as below."
+title: "MITSU: a symmetric-power activation with SwiGLU-parity scaling"
+type: software
+authors:
+  - family-names: Little
+    given-names: Evan David
+    affiliation: EL Innovations Inc.
+license: MIT
+date-released: 2026-09-01

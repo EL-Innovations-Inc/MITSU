@@ -1,0 +1,55 @@
+{"dataset": "fashion", "cell": "gelu", "variant": "gelu", "H": 64, "seed": 5, "acc": 0.8412, "diverged": 0, "params": 55050, "dials": {}, "sec": 4.2}
+{"dataset": "fashion", "cell": "gelu", "variant": "gelu", "H": 64, "seed": 6, "acc": 0.8451, "diverged": 0, "params": 55050, "dials": {}, "sec": 4.1}
+{"dataset": "fashion", "cell": "gelu", "variant": "gelu", "H": 64, "seed": 7, "acc": 0.8421, "diverged": 0, "params": 55050, "dials": {}, "sec": 4.5}
+{"dataset": "fashion", "cell": "gelu", "variant": "gelu", "H": 64, "seed": 8, "acc": 0.8437, "diverged": 0, "params": 55050, "dials": {}, "sec": 4.5}
+{"dataset": "fashion", "cell": "gelu", "variant": "gelu", "H": 64, "seed": 9, "acc": 0.8481, "diverged": 0, "params": 55050, "dials": {}, "sec": 4.2}
+{"dataset": "fashion", "cell": "mitsu", "variant": "mitsu", "H": 64, "seed": 5, "acc": 0.8536, "diverged": 0, "params": 55050, "dials": {}, "sec": 5.2}
+{"dataset": "fashion", "cell": "mitsu", "variant": "mitsu", "H": 64, "seed": 6, "acc": 0.8496, "diverged": 0, "params": 55050, "dials": {}, "sec": 3.6}
+{"dataset": "fashion", "cell": "mitsu", "variant": "mitsu", "H": 64, "seed": 7, "acc": 0.8359, "diverged": 0, "params": 55050, "dials": {}, "sec": 3.8}
+{"dataset": "fashion", "cell": "mitsu", "variant": "mitsu", "H": 64, "seed": 8, "acc": 0.8482, "diverged": 0, "params": 55050, "dials": {}, "sec": 4.1}
+{"dataset": "fashion", "cell": "mitsu", "variant": "mitsu", "H": 64, "seed": 9, "acc": 0.8449, "diverged": 0, "params": 55050, "dials": {}, "sec": 4.0}
+{"dataset": "fashion", "cell": "learn01", "variant": "learn01", "H": 64, "seed": 5, "acc": 0.848, "diverged": 0, "params": 55054, "dials": {"l1": [0.9684177841545345, 0.9684177841545345], "l2": [0.9678486446851431, 0.9678486446851431]}, "sec": 4.5}
+{"dataset": "fashion", "cell": "learn01", "variant": "learn01", "H": 64, "seed": 6, "acc": 0.8457, "diverged": 0, "params": 55054, "dials": {"l1": [0.969855039251398, 0.969855039251398], "l2": [0.9686948505427703, 0.9686948505427703]}, "sec": 5.1}
+{"dataset": "fashion", "cell": "learn01", "variant": "learn01", "H": 64, "seed": 7, "acc": 0.8492, "diverged": 0, "params": 55054, "dials": {"l1": [0.9689637912913349, 0.9689637912913349], "l2": [0.9691128124967351, 0.9691128124967351]}, "sec": 4.3}
+{"dataset": "fashion", "cell": "learn01", "variant": "learn01", "H": 64, "seed": 8, "acc": 0.8524, "diverged": 0, "params": 55054, "dials": {"l1": [0.9674752847937597, 0.9674752847937597], "l2": [0.9646069663938562, 0.9646069663938562]}, "sec": 4.5}
+{"dataset": "fashion", "cell": "learn01", "variant": "learn01", "H": 64, "seed": 9, "acc": 0.8484, "diverged": 0, "params": 55054, "dials": {"l1": [0.9696787144870336, 0.9696787144870336], "l2": [0.9690977387038556, 0.9690977387038556]}, "sec": 4.6}
+{"dataset": "fashion", "cell": "log-mitsu", "variant": "log-mitsu", "H": 64, "seed": 5, "acc": 0.8468, "diverged": 0, "params": 55050, "dials": {}, "sec": 4.5}
+{"dataset": "fashion", "cell": "log-mitsu", "variant": "log-mitsu", "H": 64, "seed": 6, "acc": 0.8501, "diverged": 0, "params": 55050, "dials": {}, "sec": 4.2}
+{"dataset": "fashion", "cell": "log-mitsu", "variant": "log-mitsu", "H": 64, "seed": 7, "acc": 0.8462, "diverged": 0, "params": 55050, "dials": {}, "sec": 3.7}
+{"dataset": "fashion", "cell": "log-mitsu", "variant": "log-mitsu", "H": 64, "seed": 8, "acc": 0.8494, "diverged": 0, "params": 55050, "dials": {}, "sec": 4.2}
+{"dataset": "fashion", "cell": "log-mitsu", "variant": "log-mitsu", "H": 64, "seed": 9, "acc": 0.845, "diverged": 0, "params": 55050, "dials": {}, "sec": 4.6}
+{"dataset": "fashion", "cell": "log-learn01", "variant": "log-learn01", "H": 64, "seed": 5, "acc": 0.8413, "diverged": 0, "params": 55054, "dials": {"l1": [0.9758204304835342, 0.9758204304835342], "l2": [0.9794334072707374, 0.9794334072707374]}, "sec": 4.8}
+{"dataset": "fashion", "cell": "log-learn01", "variant": "log-learn01", "H": 64, "seed": 6, "acc": 0.8447, "diverged": 0, "params": 55054, "dials": {"l1": [0.9759807080598794, 0.9759807080598794], "l2": [0.9792936255709904, 0.9792936255709904]}, "sec": 5.5}
+{"dataset": "fashion", "cell": "log-learn01", "variant": "log-learn01", "H": 64, "seed": 7, "acc": 0.843, "diverged": 0, "params": 55054, "dials": {"l1": [0.9760459952972158, 0.9760459952972158], "l2": [0.9798887517704257, 0.9798887517704257]}, "sec": 5.0}
+{"dataset": "fashion", "cell": "log-learn01", "variant": "log-learn01", "H": 64, "seed": 8, "acc": 0.8496, "diverged": 0, "params": 55054, "dials": {"l1": [0.9744999696126739, 0.9744999696126739], "l2": [0.9784959646140843, 0.9784959646140843]}, "sec": 4.8}
+{"dataset": "fashion", "cell": "log-learn01", "variant": "log-learn01", "H": 64, "seed": 9, "acc": 0.8481, "diverged": 0, "params": 55054, "dials": {"l1": [0.9752727777040876, 0.9752727777040876], "l2": [0.9789512627068668, 0.9789512627068668]}, "sec": 5.1}
+{"dataset": "fashion", "cell": "fixed(0.9,0.9)", "variant": "fixed(0.9,0.9)", "H": 64, "seed": 5, "acc": 0.8465, "diverged": 0, "params": 55050, "dials": {}, "sec": 4.0}
+{"dataset": "fashion", "cell": "fixed(0.9,0.9)", "variant": "fixed(0.9,0.9)", "H": 64, "seed": 6, "acc": 0.8436, "diverged": 0, "params": 55050, "dials": {}, "sec": 3.8}
+{"dataset": "fashion", "cell": "fixed(0.9,0.9)", "variant": "fixed(0.9,0.9)", "H": 64, "seed": 7, "acc": 0.8419, "diverged": 0, "params": 55050, "dials": {}, "sec": 4.0}
+{"dataset": "fashion", "cell": "fixed(0.9,0.9)", "variant": "fixed(0.9,0.9)", "H": 64, "seed": 8, "acc": 0.8572, "diverged": 0, "params": 55050, "dials": {}, "sec": 3.8}
+{"dataset": "fashion", "cell": "fixed(0.9,0.9)", "variant": "fixed(0.9,0.9)", "H": 64, "seed": 9, "acc": 0.8517, "diverged": 0, "params": 55050, "dials": {}, "sec": 4.0}
+{"dataset": "fashion", "cell": "fixed(0.75,1)", "variant": "fixed(0.75,1)", "H": 64, "seed": 5, "acc": 0.8431, "diverged": 0, "params": 55050, "dials": {}, "sec": 4.1}
+{"dataset": "fashion", "cell": "fixed(0.75,1)", "variant": "fixed(0.75,1)", "H": 64, "seed": 6, "acc": 0.8455, "diverged": 0, "params": 55050, "dials": {}, "sec": 4.0}
+{"dataset": "fashion", "cell": "fixed(0.75,1)", "variant": "fixed(0.75,1)", "H": 64, "seed": 7, "acc": 0.8438, "diverged": 0, "params": 55050, "dials": {}, "sec": 3.8}
+{"dataset": "fashion", "cell": "fixed(0.75,1)", "variant": "fixed(0.75,1)", "H": 64, "seed": 8, "acc": 0.8572, "diverged": 0, "params": 55050, "dials": {}, "sec": 4.3}
+{"dataset": "fashion", "cell": "fixed(0.75,1)", "variant": "fixed(0.75,1)", "H": 64, "seed": 9, "acc": 0.8527, "diverged": 0, "params": 55050, "dials": {}, "sec": 3.9}
+{"dataset": "fashion", "cell": "fixed(0.5,1)", "variant": "fixed(0.5,1)", "H": 64, "seed": 5, "acc": 0.8442, "diverged": 0, "params": 55050, "dials": {}, "sec": 4.0}
+{"dataset": "fashion", "cell": "fixed(0.5,1)", "variant": "fixed(0.5,1)", "H": 64, "seed": 6, "acc": 0.8491, "diverged": 0, "params": 55050, "dials": {}, "sec": 4.1}
+{"dataset": "fashion", "cell": "fixed(0.5,1)", "variant": "fixed(0.5,1)", "H": 64, "seed": 7, "acc": 0.848, "diverged": 0, "params": 55050, "dials": {}, "sec": 4.1}
+{"dataset": "fashion", "cell": "fixed(0.5,1)", "variant": "fixed(0.5,1)", "H": 64, "seed": 8, "acc": 0.851, "diverged": 0, "params": 55050, "dials": {}, "sec": 4.2}
+{"dataset": "fashion", "cell": "fixed(0.5,1)", "variant": "fixed(0.5,1)", "H": 64, "seed": 9, "acc": 0.8509, "diverged": 0, "params": 55050, "dials": {}, "sec": 3.8}
+{"dataset": "fashion", "cell": "fixed(0.75,0.75)", "variant": "fixed(0.75,0.75)", "H": 64, "seed": 5, "acc": 0.847, "diverged": 0, "params": 55050, "dials": {}, "sec": 4.0}
+{"dataset": "fashion", "cell": "fixed(0.75,0.75)", "variant": "fixed(0.75,0.75)", "H": 64, "seed": 6, "acc": 0.8509, "diverged": 0, "params": 55050, "dials": {}, "sec": 3.9}
+{"dataset": "fashion", "cell": "fixed(0.75,0.75)", "variant": "fixed(0.75,0.75)", "H": 64, "seed": 7, "acc": 0.8516, "diverged": 0, "params": 55050, "dials": {}, "sec": 4.0}
+{"dataset": "fashion", "cell": "fixed(0.75,0.75)", "variant": "fixed(0.75,0.75)", "H": 64, "seed": 8, "acc": 0.8538, "diverged": 0, "params": 55050, "dials": {}, "sec": 4.1}
+{"dataset": "fashion", "cell": "fixed(0.75,0.75)", "variant": "fixed(0.75,0.75)", "H": 64, "seed": 9, "acc": 0.8521, "diverged": 0, "params": 55050, "dials": {}, "sec": 4.1}
+{"dataset": "fashion", "cell": "log-fixed(0.75,1)", "variant": "log-fixed(0.75,1)", "H": 64, "seed": 5, "acc": 0.849, "diverged": 0, "params": 55050, "dials": {}, "sec": 4.7}
+{"dataset": "fashion", "cell": "log-fixed(0.75,1)", "variant": "log-fixed(0.75,1)", "H": 64, "seed": 6, "acc": 0.8467, "diverged": 0, "params": 55050, "dials": {}, "sec": 4.6}
+{"dataset": "fashion", "cell": "log-fixed(0.75,1)", "variant": "log-fixed(0.75,1)", "H": 64, "seed": 7, "acc": 0.8484, "diverged": 0, "params": 55050, "dials": {}, "sec": 4.4}
+{"dataset": "fashion", "cell": "log-fixed(0.75,1)", "variant": "log-fixed(0.75,1)", "H": 64, "seed": 8, "acc": 0.8507, "diverged": 0, "params": 55050, "dials": {}, "sec": 4.4}
+{"dataset": "fashion", "cell": "log-fixed(0.75,1)", "variant": "log-fixed(0.75,1)", "H": 64, "seed": 9, "acc": 0.8468, "diverged": 0, "params": 55050, "dials": {}, "sec": 4.3}
+{"dataset": "fashion", "cell": "log-fixed(0.75,0.75)", "variant": "log-fixed(0.75,0.75)", "H": 64, "seed": 5, "acc": 0.8503, "diverged": 0, "params": 55050, "dials": {}, "sec": 4.3}
+{"dataset": "fashion", "cell": "log-fixed(0.75,0.75)", "variant": "log-fixed(0.75,0.75)", "H": 64, "seed": 6, "acc": 0.8479, "diverged": 0, "params": 55050, "dials": {}, "sec": 4.3}
+{"dataset": "fashion", "cell": "log-fixed(0.75,0.75)", "variant": "log-fixed(0.75,0.75)", "H": 64, "seed": 7, "acc": 0.8473, "diverged": 0, "params": 55050, "dials": {}, "sec": 4.4}
+{"dataset": "fashion", "cell": "log-fixed(0.75,0.75)", "variant": "log-fixed(0.75,0.75)", "H": 64, "seed": 8, "acc": 0.8542, "diverged": 0, "params": 55050, "dials": {}, "sec": 4.8}
+{"dataset": "fashion", "cell": "log-fixed(0.75,0.75)", "variant": "log-fixed(0.75,0.75)", "H": 64, "seed": 9, "acc": 0.8491, "diverged": 0, "params": 55050, "dials": {}, "sec": 4.6}
