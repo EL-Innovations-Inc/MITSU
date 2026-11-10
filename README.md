@@ -149,5 +149,5 @@ intact. Negative and parity results publish here just like wins.
 ## License & citation
 
 MIT. If you use MITSU, cite via `CITATION.cff`.
-Evan David Little · EL Innovations Inc. · Whitby, Ontario · 2026.
+Evan David Little · EL Innovations Inc. · Peterborough, Ontario · 2026.
 三つ巴 — three forces, chasing each other's exponents, forever.
