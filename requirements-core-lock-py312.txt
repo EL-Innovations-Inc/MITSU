@@ -1,0 +1,5 @@
+# Tested dependency snapshot: Linux x86_64 CPU, CPython 3.12.14.
+# Exact installed versions and transitive dependencies; not a cross-platform lock.
+# These pins do not claim testing on other Python versions, CUDA or other OSes.
+
+numpy==2.3.5

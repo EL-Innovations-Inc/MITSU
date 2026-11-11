@@ -1,153 +1,165 @@
-# MITSU 三つ巴
+# MITSU 三つ巴 — v1.0.1
 
-**An activation function born from a symmetric inequality, taken from napkin to
-scaling law — pre-registered at every step.**
+A parameter-free activation derived from a symmetric three-variable expression,
+with NumPy and PyTorch implementations, an interactive lab, and reproducible
+small-model experiments.
 
+```text
+mother function: f(x,y,z) = (x^(y+z) + y^(x+z) + z^(x+y)) / (x+y+z)
+activation:      MITSU(u) = s(s-1)/(s+2), s = softplus(u)
 ```
-mother function:   f(x,y,z) = (x^(y+z) + y^(x+z) + z^(x+y)) / (x+y+z)
-activation:        MITSU(u) = s(s−1)/(s+2),   s = softplus(u)
+
+![MITSU and comparison activations](docs/figures/mitsu_curve.png)
+
+## What changed in v1.0.1
+
+1. Safer numerical evaluation, including the FP16 overflow regression, with
+   dtype and gradient tests.
+2. Paired confidence intervals and explicit practical-equivalence margins;
+   a nonsignificant difference is no longer automatically labelled parity.
+3. A larger, multi-seed CPU pilot and 1,000-step exploratory extension, with
+   raw results, locally frozen protocols,
+   uncertainty intervals, and recorded stability diagnostics.
+4. A precise explanation of the scaled gate and full-block gradient paths.
+5. An installable versioned package, tested dependency pins, CI, and measured
+   timing and tensor-storage benchmarks.
+
+See [CHANGELOG.md](CHANGELOG.md), [installation](docs/INSTALLATION.md),
+[statistical interpretation](docs/STATISTICS.md), and [stability](docs/STABILITY.md).
+The complete original experiments, trained character-model checkpoints and
+interactive lab are retained.
+
+## Install and use
+
+```bash
+python -m pip install .
+# For PyTorch, install a suitable torch build first (CPU example):
+python -m pip install torch --index-url https://download.pytorch.org/whl/cpu
+python -m pip install '.[torch]'
 ```
 
-![MITSU beside GELU, SiLU and ReLU: the curve and its slope](docs/figures/mitsu_curve.png)
-
-## The core function
-
-MITSU starts from one symmetric expression in three positive numbers,
-`f(x, y, z) = (x^(y+z) + y^(x+z) + z^(x+y)) / (x + y + z)`. Each of the three "seats" is
-raised to the power of the other two added together, and the total is divided by the sum of
-all three, so every seat acts both as a base and as part of its neighbours' exponents, and
-swapping any two seats changes nothing. To turn this into an activation function, the
-incoming signal `u` is first made positive with `s = softplus(u)` and placed in seat x,
-while the other two seats are held at 1. That gives `f(s, 1, 1) = (s² + 2) / (s + 2)`,
-which rests at 1 when the signal is silent; subtracting that resting level leaves
-`MITSU(u) = s(s − 1) / (s + 2)`. The result is a smooth curve that sits at zero for
-strongly negative inputs, dips slightly below zero (to about −0.10 near `u ≈ −0.57`), and
-then rises into a straight line of slope 1, approaching `u − 3`. Holding the two seats at
-exactly 1 is what makes the tail a straight line: lower values flatten it and higher values
-make it grow exponentially. The same expression with three different signals in the three
-seats gives the three-seat competition block.
-
-Properties, all checked in [`tests/`](tests/test_mitsu.py):
-
-- **Smooth and non-monotonic** — minimum −0.101 at u ≈ −0.57.
-- **Asymptotically linear** — MITSU(u) → u − 3 as u → +∞, → 0 as u → −∞.
-- **Bounded slope** — the derivative stays inside (−0.5, 1); in practice it runs from
-  about −0.04 up towards 1 and never exceeds it. SiLU's slope peaks near 1.10 and GELU's
-  near 1.13.
-- **No parameters** — a drop-in for `nn.GELU` / `nn.SiLU`.
-
-`MitsuGLU` is SwiGLU with the SiLU gate swapped for MITSU; nothing else changes.
-
-## What we claim (and what we don't)
-
-MITSU is a **peer** of GELU/SiLU/SwiGLU, not an upgrade. Every experiment below
-was pre-registered (hypotheses, decision rules, and gates frozen before data —
-see the `prereg*.md` file beside each experiment), and the headline result is
-**parity, everywhere we looked**:
-
-| experiment | result |
-|---|---|
-| [01](experiments/01_classification) · MNIST / Fashion-MNIST MLPs (5 seeds, param-matched) | MITSU within noise of GELU; top of table on both |
-| [02](experiments/02_char_gpt) · char-GPT twins, Tiny Shakespeare (identical init + batches) | val 1.7107 (MITSU) vs 1.7062 (GELU) — Δ 0.0045 nats |
-| [03](experiments/03_scaling_ladder) · **nano scaling ladder**, MitsuGLU vs SwiGLU, WikiText-2, 32k→483k params | MITSU ahead at **4/4** paired rungs (each Δ < 0.004 nats); fitted exponents **α = 0.6093 vs 0.6063**; zero divergences in 8 runs |
-| [04](experiments/04_dial_family) · **dial family**, 29 ways of filling the three seats, 472 runs | no variant confirmed better than the current (1, 1) setting; the three-seat block loses at a matched parameter budget |
-
-The one open question with commercial-grade stakes: whether the bounded
-derivative buys **fewer loss spikes at scale** (hypothesis S2 in
-[`docs/PLAN.md`](docs/PLAN.md)). The GPU ladder in
-[`docs/RING2_PLAYBOOK.md`](docs/RING2_PLAYBOOK.md) is designed to answer it.
-Either answer will be published here.
-
-## Use it
-
-NumPy reference — `mitsu.py` is the single source of truth for the math:
+NumPy:
 
 ```python
 import numpy as np
 from mitsu import mitsu, mitsu_d
-
 u = np.linspace(-4, 4, 9)
-y  = mitsu(u)      # the activation
-dy = mitsu_d(u)    # its exact derivative
+y, dy = mitsu(u), mitsu_d(u)
 ```
 
-PyTorch — copy `torch/mitsu_torch.py` or `torch/mitsu_glu.py` into your project:
+PyTorch:
 
 ```python
-from mitsu_torch import MITSU          # drop-in for nn.GELU / nn.SiLU
-from mitsu_glu import MitsuGLU         # SwiGLU with the gate transplanted
-
-act = MITSU()                                              # nanoGPT: self.gelu = MITSU()
-ffn = MitsuGLU(dim=512, hidden_dim=1365, gate_mult=3.04)   # Llama-style feed-forward
+from mitsu_torch import MITSU, MitsuGLU
+act = MITSU()
+ffn = MitsuGLU(dim=512, hidden_dim=1365, gate_mult=3.0374)
 ```
 
-`gate_mult` restores the gate's signal size at initialisation: MITSU is about 3.04× quieter
-than SiLU on a standard-normal input. Set it to 1.0 to study the raw formula.
+`MITSU` has no trainable parameters and preserves tensor shape. The PyTorch
+implementation promotes FP16/BF16 arithmetic internally to float32 and casts
+back. The historical `torch/` files remain available for standalone copying.
+The optional PyTorch dependency is unnecessary for NumPy-only use.
 
-**The interactive lab** — [`lab/mitsu-activation-lab.html`](lab/mitsu-activation-lab.html)
-is a single HTML file with no build step: forge the activation with live dials, train
-perceptrons in-browser, stack block towers. GitHub shows its source rather than running it,
-so clone the repository and open the file in a browser.
+`gate_mult=3.0374` is the historical pilot's standard-deviation matching choice
+under standard-normal inputs; the module default is 1.0. This gain also
+multiplies the derivative. It does not establish training stability or match
+every layer's signal distribution. See [the derivation](docs/STABILITY.md).
 
-## Repo map
+## The core function
 
-```
-mitsu.py                      reference implementation (numpy, 20 lines)
-torch/mitsu_torch.py          nn.Module drop-in for nn.GELU (patch nanoGPT in 1 line)
-torch/mitsu_glu.py            MitsuGLU — SwiGLU with the gate transplanted
-tests/                        unit tests for the math and the PyTorch drop-ins
-lab/                          the interactive lab (single HTML file, no build)
-experiments/01_classification MLPs & tri-blocks on digits/MNIST/Fashion + preregs 1–3
-experiments/02_char_gpt       hand-backprop numpy transformer + trained nano weights
-experiments/03_scaling_ladder MitsuGLU vs SwiGLU ladder, fits, preregs 5–6
-experiments/04_dial_family    every other way of filling the three seats + prereg 7
-docs/PLAN.md                  the from-scratch MITSU-8B battle plan
-docs/RING2_PLAYBOOK.md        the $400 GPU scaling ladder, step by step
-```
+Set x = s = softplus(u), y = z = 1 in the symmetric expression. This gives
+f(s,1,1) = (s²+2)/(s+2). Subtract its limiting value 1 as u tends to negative
+infinity to obtain MITSU. Here “silence” means that limiting input, not u = 0.
 
-Experiments 01–03 train on CPU in pure numpy with hand-derived, finite-difference-
-checked backprop (worst rel. err ~1e-6 for the transformer). Experiment 04 uses
-PyTorch autograd behind its own sanity gate. The char-GPT checkpoints in
-`experiments/02_char_gpt/` are real trained weights (2.2 MB each):
+The activation is smooth and non-monotonic, with minimum approximately
+-0.10102 at u approximately -0.5665. It tends to 0 on the left and approaches
+u-3 on the right. Its exact unscaled scalar derivative is
 
-```
-cd experiments/02_char_gpt && ./get_data.sh
-python3 mitsu_gpt.py sample mitsu "ROMEO:"
+```text
+m'(u) = [1 - 6/(softplus(u)+2)^2] sigmoid(u),  -0.5 < m'(u) < 1.
 ```
 
-It will produce Shakespeare-shaped dialogue and, occasionally, invent
-characters. We are fond of `FillINGS MOVERD`.
+The bound is deliberately loose. The numerical implementation uses an
+algebraically equivalent evaluation that avoids the overflowing intermediate
+product in s(s-1). The underlying activation formula is unchanged.
 
-## Install and test
+## Evidence and limits
 
+The experiments support feasibility on the tested tasks. They do not establish
+superiority to GELU/SiLU, an industrial-scale scaling law, or fewer loss spikes
+in large models. Practical equivalence is a specific confidence-interval
+conclusion within a stated margin; it is not inferred merely from p > 0.05.
+
+| Experiment | What is included | Scope |
+|---|---|---|
+| [01 Classification](experiments/01_classification) | NumPy MLPs, MNIST/Fashion-MNIST and bundled datasets, five seeds | Historical small-model comparisons |
+| [02 Character GPT](experiments/02_char_gpt) | Paired Tiny Shakespeare models and trained weights | One historical paired run; Δ loss +0.0045 nats |
+| [03 Nano ladder](experiments/03_scaling_ladder) | Four paired sizes, 31,936–483,184 parameters | One seed per size; four points cannot establish an 8B extrapolation |
+| [04 Dial family](experiments/04_dial_family) | 29 variants and 472 historical result records | New post hoc CI reports alongside unchanged historical results |
+| [05 Multi-seed scaling](experiments/05_multiseed_scaling) | 997,632 / 1,756,160 parameters, three paired seeds, 100 / 1,000 steps | Separate correlated horizons; no large-model stability claim |
+| [Performance](benchmarks) | CPU timing and tensor-storage measurements; CUDA-capable harness | Hardware/dtype-specific measurements, no unmeasured GPU claims |
+
+The 1,000-step extension reports the following descriptive paired differences
+(MitsuGLU minus SwiGLU; lower favors MITSU):
+
+| Parameters | Mean loss delta, nats | Paired 95% CI |
+|---:|---:|---|
+| 997,632 | +0.003756 | [-0.032176, +0.039687] |
+| 1,756,160 | +0.001593 | [-0.096138, +0.099325] |
+
+These observations do not establish an advantage. Both families recorded zero
+defined loss spikes/divergences over this limited exposure. The 100-step pilot
+and extension reuse the same trajectories and are not independent replication.
+See the [full extension report](experiments/05_multiseed_scaling/results/extension/REPORT.md).
+
+Original preregistrations and historical result files remain intact. New
+v1.0.1 analyses are labelled separately; they do not retroactively become
+pre-registered. The experiment 05 local freeze records file hashes before
+its official runs, without claiming an independent public timestamp.
+
+## Test and reproduce
+
+```bash
+python -m pip install -e '.[dev,torch,experiments]'
+python -m pytest -q
+python experiments/04_dial_family/gate.py
+python experiments/04_dial_family/analyze.py
+python experiments/04_dial_family/analyze.py _confirm
 ```
-pip install -r requirements.txt     # numpy alone is enough for mitsu.py
-pytest -q                           # 8 tests: the math, the bounds, the PyTorch drop-ins
+
+The new analysis writes versioned reports and summaries, preserving historical
+ones. Each experiment and the benchmark folder provide their own exact run
+commands. [VALIDATION.md](VALIDATION.md) records release checks and their scope.
+
+Historical NumPy gradient checks:
+
+```bash
+python experiments/02_char_gpt/mitsu_gpt.py gradcheck
+python experiments/03_scaling_ladder/ladder.py gradcheck
 ```
 
-## Reproduce the ladder
+The [interactive lab](lab/mitsu-activation-lab.html) can be opened directly in a
+browser. It has no build step; its external font is optional. Its visual
+experiments are separate from the measured Python benchmark harnesses.
 
+## Repository map
+
+```text
+mitsu.py                         NumPy reference and derivative
+mitsu_torch/                     installable PyTorch activation and gated FFN
+torch/                           legacy standalone copy files
+tests/                           mathematical, numerical, statistical and integration tests
+benchmarks/                      performance harness and measured CPU results
+lab/                             interactive HTML lab
+experiments/01_classification/   historical classification experiments
+experiments/02_char_gpt/         historical NumPy transformer and checkpoints
+experiments/03_scaling_ladder/   historical four-point nano ladder
+experiments/04_dial_family/      historical variant grid plus v1.0.1 CI reports
+experiments/05_multiseed_scaling/ multi-seed short-horizon pilot and longer-run profile
+docs/                            installation, statistical and stability explanations
 ```
-cd experiments/03_scaling_ladder && ./get_data.sh
-python3 ladder.py gradcheck   # gate: both families < 1e-4
-python3 ladder.py setup       # freezes configs + gate_mult
-python3 ladder.py run 600     # resumable; repeat until QUEUE COMPLETE
-python3 ladder.py fit         # power laws + the verdict
-```
 
-Each experiment folder has its own README with the commands for that experiment.
+## License and citation
 
-## Method
-
-Every experiment follows the same protocol: **pre-register** (predictions +
-frozen decision rules) → **gradcheck gate** → run → **report against the
-pre-registration**, misses included. The prereg files are unedited from before
-each run (one exception, recorded in `experiments/04_dial_family/FROZEN.txt`: the
-authorship line of prereg7); several contain predictions that turned out wrong, on purpose left
-intact. Negative and parity results publish here just like wins.
-
-## License & citation
-
-MIT. If you use MITSU, cite via `CITATION.cff`.
-Evan David Little · EL Innovations Inc. · Peterborough, Ontario · 2026.
-三つ巴 — three forces, chasing each other's exponents, forever.
+MIT. See [LICENSE](LICENSE) and [CITATION.cff](CITATION.cff).
+Evan David Little · EL Innovations Inc. · Whitby, Ontario · 2026.
