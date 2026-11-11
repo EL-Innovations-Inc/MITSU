@@ -1,0 +1,35 @@
+{"dataset": "mnist", "cell": "mitsu", "variant": "mitsu", "H": 64, "seed": 0, "acc": 0.9522, "diverged": 0, "params": 55050, "dials": {}, "sec": 2.1}
+{"dataset": "mnist", "cell": "mitsu", "variant": "mitsu", "H": 64, "seed": 1, "acc": 0.9489, "diverged": 0, "params": 55050, "dials": {}, "sec": 2.1}
+{"dataset": "mnist", "cell": "mitsu", "variant": "mitsu", "H": 64, "seed": 2, "acc": 0.9582, "diverged": 0, "params": 55050, "dials": {}, "sec": 2.1}
+{"dataset": "mnist", "cell": "mitsu", "variant": "mitsu", "H": 64, "seed": 3, "acc": 0.9396, "diverged": 0, "params": 55050, "dials": {}, "sec": 2.1}
+{"dataset": "mnist", "cell": "mitsu", "variant": "mitsu", "H": 64, "seed": 4, "acc": 0.9531, "diverged": 0, "params": 55050, "dials": {}, "sec": 2.1}
+{"dataset": "mnist", "cell": "c=0.25", "variant": "c=0.25", "H": 64, "seed": 0, "acc": 0.9405, "diverged": 0, "params": 55050, "dials": {}, "sec": 2.1}
+{"dataset": "mnist", "cell": "c=0.25", "variant": "c=0.25", "H": 64, "seed": 1, "acc": 0.9386, "diverged": 0, "params": 55050, "dials": {}, "sec": 2.3}
+{"dataset": "mnist", "cell": "c=0.25", "variant": "c=0.25", "H": 64, "seed": 2, "acc": 0.9547, "diverged": 0, "params": 55050, "dials": {}, "sec": 2.1}
+{"dataset": "mnist", "cell": "c=0.25", "variant": "c=0.25", "H": 64, "seed": 3, "acc": 0.9391, "diverged": 0, "params": 55050, "dials": {}, "sec": 2.2}
+{"dataset": "mnist", "cell": "c=0.25", "variant": "c=0.25", "H": 64, "seed": 4, "acc": 0.9527, "diverged": 0, "params": 55050, "dials": {}, "sec": 2.2}
+{"dataset": "mnist", "cell": "c=0.5", "variant": "c=0.5", "H": 64, "seed": 0, "acc": 0.9291, "diverged": 0, "params": 55050, "dials": {}, "sec": 2.1}
+{"dataset": "mnist", "cell": "c=0.5", "variant": "c=0.5", "H": 64, "seed": 1, "acc": 0.9424, "diverged": 0, "params": 55050, "dials": {}, "sec": 2.3}
+{"dataset": "mnist", "cell": "c=0.5", "variant": "c=0.5", "H": 64, "seed": 2, "acc": 0.9548, "diverged": 0, "params": 55050, "dials": {}, "sec": 2.1}
+{"dataset": "mnist", "cell": "c=0.5", "variant": "c=0.5", "H": 64, "seed": 3, "acc": 0.9387, "diverged": 0, "params": 55050, "dials": {}, "sec": 2.2}
+{"dataset": "mnist", "cell": "c=0.5", "variant": "c=0.5", "H": 64, "seed": 4, "acc": 0.9515, "diverged": 0, "params": 55050, "dials": {}, "sec": 2.2}
+{"dataset": "mnist", "cell": "c=1", "variant": "c=1", "H": 64, "seed": 0, "acc": 0.9529, "diverged": 0, "params": 55050, "dials": {}, "sec": 2.1}
+{"dataset": "mnist", "cell": "c=1", "variant": "c=1", "H": 64, "seed": 1, "acc": 0.9431, "diverged": 0, "params": 55050, "dials": {}, "sec": 2.1}
+{"dataset": "mnist", "cell": "c=1", "variant": "c=1", "H": 64, "seed": 2, "acc": 0.9497, "diverged": 0, "params": 55050, "dials": {}, "sec": 2.1}
+{"dataset": "mnist", "cell": "c=1", "variant": "c=1", "H": 64, "seed": 3, "acc": 0.9437, "diverged": 0, "params": 55050, "dials": {}, "sec": 2.2}
+{"dataset": "mnist", "cell": "c=1", "variant": "c=1", "H": 64, "seed": 4, "acc": 0.9431, "diverged": 0, "params": 55050, "dials": {}, "sec": 2.1}
+{"dataset": "mnist", "cell": "c=4", "variant": "c=4", "H": 64, "seed": 0, "acc": 0.9511, "diverged": 0, "params": 55050, "dials": {}, "sec": 2.2}
+{"dataset": "mnist", "cell": "c=4", "variant": "c=4", "H": 64, "seed": 1, "acc": 0.9494, "diverged": 0, "params": 55050, "dials": {}, "sec": 2.3}
+{"dataset": "mnist", "cell": "c=4", "variant": "c=4", "H": 64, "seed": 2, "acc": 0.9555, "diverged": 0, "params": 55050, "dials": {}, "sec": 2.2}
+{"dataset": "mnist", "cell": "c=4", "variant": "c=4", "H": 64, "seed": 3, "acc": 0.9493, "diverged": 0, "params": 55050, "dials": {}, "sec": 2.1}
+{"dataset": "mnist", "cell": "c=4", "variant": "c=4", "H": 64, "seed": 4, "acc": 0.9526, "diverged": 0, "params": 55050, "dials": {}, "sec": 2.2}
+{"dataset": "mnist", "cell": "c=8", "variant": "c=8", "H": 64, "seed": 0, "acc": 0.944, "diverged": 0, "params": 55050, "dials": {}, "sec": 2.2}
+{"dataset": "mnist", "cell": "c=8", "variant": "c=8", "H": 64, "seed": 1, "acc": 0.9503, "diverged": 0, "params": 55050, "dials": {}, "sec": 2.2}
+{"dataset": "mnist", "cell": "c=8", "variant": "c=8", "H": 64, "seed": 2, "acc": 0.9556, "diverged": 0, "params": 55050, "dials": {}, "sec": 2.2}
+{"dataset": "mnist", "cell": "c=8", "variant": "c=8", "H": 64, "seed": 3, "acc": 0.946, "diverged": 0, "params": 55050, "dials": {}, "sec": 2.3}
+{"dataset": "mnist", "cell": "c=8", "variant": "c=8", "H": 64, "seed": 4, "acc": 0.9438, "diverged": 0, "params": 55050, "dials": {}, "sec": 2.3}
+{"dataset": "mnist", "cell": "learnc", "variant": "learnc", "H": 64, "seed": 0, "acc": 0.9515, "diverged": 0, "params": 55052, "dials": {"l1": [1.5279382783842963], "l2": [1.5532363378008713]}, "sec": 2.5}
+{"dataset": "mnist", "cell": "learnc", "variant": "learnc", "H": 64, "seed": 1, "acc": 0.9466, "diverged": 0, "params": 55052, "dials": {"l1": [1.7360913106000397], "l2": [1.661031393679888]}, "sec": 2.4}
+{"dataset": "mnist", "cell": "learnc", "variant": "learnc", "H": 64, "seed": 2, "acc": 0.9575, "diverged": 0, "params": 55052, "dials": {"l1": [1.4888207041091437], "l2": [1.519553685195521]}, "sec": 2.6}
+{"dataset": "mnist", "cell": "learnc", "variant": "learnc", "H": 64, "seed": 3, "acc": 0.947, "diverged": 0, "params": 55052, "dials": {"l1": [1.467404432248975], "l2": [1.4611170663858517]}, "sec": 2.4}
+{"dataset": "mnist", "cell": "learnc", "variant": "learnc", "H": 64, "seed": 4, "acc": 0.9533, "diverged": 0, "params": 55052, "dials": {"l1": [1.4840509026950983], "l2": [1.5289871969895397]}, "sec": 2.4}

@@ -1,0 +1,21 @@
+{
+  "widths": [
+    192,
+    256
+  ],
+  "layers": 2,
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "steps": 1000,
+  "context": 64,
+  "batch": 8,
+  "gain": 3.0374,
+  "lr": 0.002,
+  "weight_decay": 0.01,
+  "warmup": 20,
+  "clip": 1.0,
+  "spike_add_nats": 0.5
+}

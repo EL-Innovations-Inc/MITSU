@@ -1,0 +1,37 @@
+{
+  "config": {
+    "widths": [
+      192,
+      256
+    ],
+    "layers": 2,
+    "seeds": [
+      0,
+      1,
+      2
+    ],
+    "steps": 1000,
+    "context": 64,
+    "batch": 8,
+    "gain": 3.0374,
+    "lr": 0.002,
+    "weight_decay": 0.01,
+    "warmup": 20,
+    "clip": 1.0,
+    "spike_add_nats": 0.5
+  },
+  "config_sha256": "94b1406fb224abd8f0ea3488cf60a76e37919294ddbfc09ee0aeb58cf74cffd4",
+  "script_sha256": "3b4530927142a75a86a5745793e74ec28d8109e0e9bda8624eb66c909c64d79b",
+  "dataset_sha256": "86c4e6aa9db7c042ec79f339dcb96d42b0075e16b8fc2e86bf0ca57e2dc565ed",
+  "canonical_torch_source_sha256": "68fea54edcbf99645079f9f6bb0edebf6b0994a0058d63b5f1ffcf6176f3c5a5",
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "torch": "2.15.0+cpu",
+  "numpy": "2.3.5",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "processor": "",
+  "cpu_count": 9,
+  "device": "cpu",
+  "dtype": "float32",
+  "threads": 1,
+  "freeze_note": "Local content hashes recorded before official runs; no independent timestamp registration."
+}

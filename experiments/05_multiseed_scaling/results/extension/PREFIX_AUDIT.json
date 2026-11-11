@@ -1,0 +1,11 @@
+{
+  "hash_checks": "PASS",
+  "expected_record_checks": "PASS",
+  "matched_initial_weights": "PASS",
+  "prefix_train_loss_and_gradient_norm_checks": "PASS",
+  "pilot_records": 12,
+  "extension_records": 12,
+  "seed_size_pairs": 6,
+  "horizons": 2,
+  "interpretation": "The same six seed-size pairs follow identical first-100-step trajectories. The two horizons are correlated observations, not independent replication or 24 independent trials."
+}

@@ -1,0 +1,10 @@
+mnist seed 0 acc 94.90 div 0
+mnist seed 1 acc 94.44 div 0
+mnist seed 2 acc 95.73 div 0
+mnist seed 3 acc 94.48 div 0
+mnist seed 4 acc 95.15 div 0
+fashion seed 0 acc 85.19 div 0
+fashion seed 1 acc 84.14 div 0
+fashion seed 2 acc 83.84 div 0
+fashion seed 3 acc 84.64 div 0
+fashion seed 4 acc 84.09 div 0

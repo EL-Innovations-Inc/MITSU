@@ -1,0 +1,1007 @@
+{
+  "mnist": [
+    {
+      "name": "c=4",
+      "n": 5,
+      "delta": 0.11800000000000352,
+      "se": 0.21923503369671832,
+      "t": 0.5382351443120189,
+      "p_two_sided": 0.6189676541880579,
+      "ci95": [
+        -0.4906940361951233,
+        0.7266940361951304
+      ],
+      "equivalent": false,
+      "margin": 0.5,
+      "alpha": 0.05,
+      "status": "ok",
+      "mean": 95.158,
+      "std": 0.23059921942625772,
+      "pooled": 0.46566941063376865,
+      "within_pooled": true,
+      "diverged": 0,
+      "paired_failures": [],
+      "invalid_seeds": [],
+      "paired_seeds": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "n_paired_total": 5,
+      "missing_variant_seeds": [],
+      "missing_baseline_seeds": [],
+      "inference_eligible": true,
+      "difference_screen": "not established",
+      "equivalence_established": false,
+      "params": 55050,
+      "verdict": "inconclusive",
+      "dials": {
+        "0": {},
+        "1": {},
+        "2": {},
+        "3": {},
+        "4": {}
+      }
+    },
+    {
+      "name": "learnc",
+      "n": 5,
+      "delta": 0.07800000000000011,
+      "se": 0.17033496411482799,
+      "t": 0.4579212518424458,
+      "p_two_sided": 0.6707806244875896,
+      "ci95": [
+        -0.3949256773606558,
+        0.550925677360656
+      ],
+      "equivalent": false,
+      "margin": 0.5,
+      "alpha": 0.05,
+      "status": "ok",
+      "mean": 95.118,
+      "std": 0.4074015218430123,
+      "pooled": 0.5227312885221269,
+      "within_pooled": true,
+      "diverged": 0,
+      "paired_failures": [],
+      "invalid_seeds": [],
+      "paired_seeds": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "n_paired_total": 5,
+      "missing_variant_seeds": [],
+      "missing_baseline_seeds": [],
+      "inference_eligible": true,
+      "difference_screen": "not established",
+      "equivalence_established": false,
+      "params": 55052,
+      "verdict": "inconclusive",
+      "dials": {
+        "0": {
+          "l1": [
+            1.5279382783842963
+          ],
+          "l2": [
+            1.5532363378008713
+          ]
+        },
+        "1": {
+          "l1": [
+            1.7360913106000397
+          ],
+          "l2": [
+            1.661031393679888
+          ]
+        },
+        "2": {
+          "l1": [
+            1.4888207041091437
+          ],
+          "l2": [
+            1.519553685195521
+          ]
+        },
+        "3": {
+          "l1": [
+            1.467404432248975
+          ],
+          "l2": [
+            1.4611170663858517
+          ]
+        },
+        "4": {
+          "l1": [
+            1.4840509026950983
+          ],
+          "l2": [
+            1.5289871969895397
+          ]
+        }
+      }
+    },
+    {
+      "name": "mitsu",
+      "n": 5,
+      "delta": 0.0,
+      "se": 0.0,
+      "t": null,
+      "p_two_sided": null,
+      "ci95": null,
+      "equivalent": null,
+      "margin": 0.5,
+      "alpha": 0.05,
+      "status": "degenerate paired variance",
+      "mean": 95.03999999999999,
+      "std": 0.616863031798797,
+      "pooled": 0.616863031798797,
+      "within_pooled": true,
+      "diverged": 0,
+      "paired_failures": [],
+      "invalid_seeds": [],
+      "paired_seeds": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "n_paired_total": 5,
+      "missing_variant_seeds": [],
+      "missing_baseline_seeds": [],
+      "inference_eligible": false,
+      "difference_screen": "withheld",
+      "equivalence_established": false,
+      "params": 55050,
+      "verdict": "baseline",
+      "dials": {
+        "0": {},
+        "1": {},
+        "2": {},
+        "3": {},
+        "4": {}
+      }
+    },
+    {
+      "name": "c=8",
+      "n": 5,
+      "delta": -0.2460000000000008,
+      "se": 0.2942379989056478,
+      "t": -0.836057888222944,
+      "p_two_sided": 0.4501570119624702,
+      "ci95": [
+        -1.0629356518247803,
+        0.5709356518247787
+      ],
+      "equivalent": false,
+      "margin": 0.5,
+      "alpha": 0.05,
+      "status": "ok",
+      "mean": 94.79400000000001,
+      "std": 0.4487137171961688,
+      "pooled": 0.5393811268481716,
+      "within_pooled": true,
+      "diverged": 0,
+      "paired_failures": [],
+      "invalid_seeds": [],
+      "paired_seeds": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "n_paired_total": 5,
+      "missing_variant_seeds": [],
+      "missing_baseline_seeds": [],
+      "inference_eligible": true,
+      "difference_screen": "not established",
+      "equivalence_established": false,
+      "params": 55050,
+      "verdict": "inconclusive",
+      "dials": {
+        "0": {},
+        "1": {},
+        "2": {},
+        "3": {},
+        "4": {}
+      }
+    },
+    {
+      "name": "c=1",
+      "n": 5,
+      "delta": -0.38999999999999774,
+      "se": 0.27123790295605815,
+      "t": -1.4378521428960451,
+      "p_two_sided": 0.22385498346501145,
+      "ci95": [
+        -1.1430771480064594,
+        0.363077148006464
+      ],
+      "equivalent": false,
+      "margin": 0.5,
+      "alpha": 0.05,
+      "status": "ok",
+      "mean": 94.65,
+      "std": 0.4053640339250594,
+      "pooled": 0.5219386937179501,
+      "within_pooled": true,
+      "diverged": 0,
+      "paired_failures": [],
+      "invalid_seeds": [],
+      "paired_seeds": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "n_paired_total": 5,
+      "missing_variant_seeds": [],
+      "missing_baseline_seeds": [],
+      "inference_eligible": true,
+      "difference_screen": "not established",
+      "equivalence_established": false,
+      "params": 55050,
+      "verdict": "inconclusive",
+      "dials": {
+        "0": {},
+        "1": {},
+        "2": {},
+        "3": {},
+        "4": {}
+      }
+    },
+    {
+      "name": "c=0.25",
+      "n": 5,
+      "delta": -0.5279999999999972,
+      "se": 0.24108919511251686,
+      "t": -2.1900608185845014,
+      "p_two_sided": 0.09368571691853896,
+      "ci95": [
+        -1.1973709156862204,
+        0.14137091568622595
+      ],
+      "equivalent": false,
+      "margin": 0.5,
+      "alpha": 0.05,
+      "status": "ok",
+      "mean": 94.512,
+      "std": 0.7061557901766411,
+      "pooled": 0.6630143286536121,
+      "within_pooled": true,
+      "diverged": 0,
+      "paired_failures": [],
+      "invalid_seeds": [],
+      "paired_seeds": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "n_paired_total": 5,
+      "missing_variant_seeds": [],
+      "missing_baseline_seeds": [],
+      "inference_eligible": true,
+      "difference_screen": "not established",
+      "equivalence_established": false,
+      "params": 55050,
+      "verdict": "inconclusive",
+      "dials": {
+        "0": {},
+        "1": {},
+        "2": {},
+        "3": {},
+        "4": {}
+      }
+    },
+    {
+      "name": "c=0.5",
+      "n": 5,
+      "delta": -0.7099999999999966,
+      "se": 0.4115458662166367,
+      "t": -1.7252026038484236,
+      "p_two_sided": 0.15957558497830648,
+      "ci95": [
+        -1.8526345058215634,
+        0.43263450582157015
+      ],
+      "equivalent": false,
+      "margin": 0.5,
+      "alpha": 0.05,
+      "status": "ok",
+      "mean": 94.33,
+      "std": 0.9198912979260131,
+      "pooled": 0.7831730332436149,
+      "within_pooled": true,
+      "diverged": 0,
+      "paired_failures": [],
+      "invalid_seeds": [],
+      "paired_seeds": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "n_paired_total": 5,
+      "missing_variant_seeds": [],
+      "missing_baseline_seeds": [],
+      "inference_eligible": true,
+      "difference_screen": "not established",
+      "equivalence_established": false,
+      "params": 55050,
+      "verdict": "inconclusive",
+      "dials": {
+        "0": {},
+        "1": {},
+        "2": {},
+        "3": {},
+        "4": {}
+      }
+    }
+  ],
+  "fashion": [
+    {
+      "name": "c=1",
+      "n": 5,
+      "delta": 0.24399999999999977,
+      "se": 0.14827676824101294,
+      "t": 1.6455713386158768,
+      "p_two_sided": 0.17519736352823548,
+      "ci95": [
+        -0.16768230739730822,
+        0.6556823073973077
+      ],
+      "equivalent": false,
+      "margin": 0.5,
+      "alpha": 0.05,
+      "status": "ok",
+      "mean": 84.576,
+      "std": 0.31359846938401614,
+      "pooled": 0.26892378102354203,
+      "within_pooled": true,
+      "diverged": 0,
+      "paired_failures": [],
+      "invalid_seeds": [],
+      "paired_seeds": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "n_paired_total": 5,
+      "missing_variant_seeds": [],
+      "missing_baseline_seeds": [],
+      "inference_eligible": true,
+      "difference_screen": "not established",
+      "equivalence_established": false,
+      "params": 55050,
+      "verdict": "inconclusive",
+      "dials": {
+        "0": {},
+        "1": {},
+        "2": {},
+        "3": {},
+        "4": {}
+      }
+    },
+    {
+      "name": "c=0.5",
+      "n": 5,
+      "delta": 0.09400000000000261,
+      "se": 0.24512445818400183,
+      "t": 0.38347866506834594,
+      "p_two_sided": 0.7208751283492146,
+      "ci95": [
+        -0.5865746020892304,
+        0.7745746020892357
+      ],
+      "equivalent": false,
+      "margin": 0.5,
+      "alpha": 0.05,
+      "status": "ok",
+      "mean": 84.42600000000002,
+      "std": 0.6045692681570909,
+      "pooled": 0.4537620521815364,
+      "within_pooled": true,
+      "diverged": 0,
+      "paired_failures": [],
+      "invalid_seeds": [],
+      "paired_seeds": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "n_paired_total": 5,
+      "missing_variant_seeds": [],
+      "missing_baseline_seeds": [],
+      "inference_eligible": true,
+      "difference_screen": "not established",
+      "equivalence_established": false,
+      "params": 55050,
+      "verdict": "inconclusive",
+      "dials": {
+        "0": {},
+        "1": {},
+        "2": {},
+        "3": {},
+        "4": {}
+      }
+    },
+    {
+      "name": "c=0.25",
+      "n": 5,
+      "delta": 0.07399999999999807,
+      "se": 0.15088406145116734,
+      "t": 0.4904427895715658,
+      "p_two_sided": 0.6495070617242258,
+      "ci95": [
+        -0.3449213138684586,
+        0.4929213138684547
+      ],
+      "equivalent": true,
+      "margin": 0.5,
+      "alpha": 0.05,
+      "status": "ok",
+      "mean": 84.406,
+      "std": 0.2788261106854953,
+      "pooled": 0.24903814968795274,
+      "within_pooled": true,
+      "diverged": 0,
+      "paired_failures": [],
+      "invalid_seeds": [],
+      "paired_seeds": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "n_paired_total": 5,
+      "missing_variant_seeds": [],
+      "missing_baseline_seeds": [],
+      "inference_eligible": true,
+      "difference_screen": "not established",
+      "equivalence_established": true,
+      "params": 55050,
+      "verdict": "equivalent within margin",
+      "dials": {
+        "0": {},
+        "1": {},
+        "2": {},
+        "3": {},
+        "4": {}
+      }
+    },
+    {
+      "name": "c=8",
+      "n": 5,
+      "delta": 0.060000000000002274,
+      "se": 0.2551862065237852,
+      "t": 0.23512242615828782,
+      "p_two_sided": 0.8256601016036674,
+      "ci95": [
+        -0.6485104940169544,
+        0.7685104940169589
+      ],
+      "equivalent": false,
+      "margin": 0.5,
+      "alpha": 0.05,
+      "status": "ok",
+      "mean": 84.39200000000001,
+      "std": 0.5340187262634142,
+      "pooled": 0.40710686557708503,
+      "within_pooled": true,
+      "diverged": 0,
+      "paired_failures": [],
+      "invalid_seeds": [],
+      "paired_seeds": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "n_paired_total": 5,
+      "missing_variant_seeds": [],
+      "missing_baseline_seeds": [],
+      "inference_eligible": true,
+      "difference_screen": "not established",
+      "equivalence_established": false,
+      "params": 55050,
+      "verdict": "inconclusive",
+      "dials": {
+        "0": {},
+        "1": {},
+        "2": {},
+        "3": {},
+        "4": {}
+      }
+    },
+    {
+      "name": "mitsu",
+      "n": 5,
+      "delta": 0.0,
+      "se": 0.0,
+      "t": null,
+      "p_two_sided": null,
+      "ci95": null,
+      "equivalent": null,
+      "margin": 0.5,
+      "alpha": 0.05,
+      "status": "degenerate paired variance",
+      "mean": 84.332,
+      "std": 0.2151650529244892,
+      "pooled": 0.2151650529244892,
+      "within_pooled": true,
+      "diverged": 0,
+      "paired_failures": [],
+      "invalid_seeds": [],
+      "paired_seeds": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "n_paired_total": 5,
+      "missing_variant_seeds": [],
+      "missing_baseline_seeds": [],
+      "inference_eligible": false,
+      "difference_screen": "withheld",
+      "equivalence_established": false,
+      "params": 55050,
+      "verdict": "baseline",
+      "dials": {
+        "0": {},
+        "1": {},
+        "2": {},
+        "3": {},
+        "4": {}
+      }
+    },
+    {
+      "name": "c=4",
+      "n": 5,
+      "delta": -0.03400000000000034,
+      "se": 0.233636469755904,
+      "t": -0.14552522573005178,
+      "p_two_sided": 0.8913349616238493,
+      "ci95": [
+        -0.6826788328494723,
+        0.6146788328494716
+      ],
+      "equivalent": false,
+      "margin": 0.5,
+      "alpha": 0.05,
+      "status": "ok",
+      "mean": 84.298,
+      "std": 0.619690245203201,
+      "pooled": 0.46384911339788165,
+      "within_pooled": true,
+      "diverged": 0,
+      "paired_failures": [],
+      "invalid_seeds": [],
+      "paired_seeds": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "n_paired_total": 5,
+      "missing_variant_seeds": [],
+      "missing_baseline_seeds": [],
+      "inference_eligible": true,
+      "difference_screen": "not established",
+      "equivalence_established": false,
+      "params": 55050,
+      "verdict": "inconclusive",
+      "dials": {
+        "0": {},
+        "1": {},
+        "2": {},
+        "3": {},
+        "4": {}
+      }
+    },
+    {
+      "name": "learnc",
+      "n": 5,
+      "delta": -0.15400000000000205,
+      "se": 0.1323102414781259,
+      "t": -1.1639310629288058,
+      "p_two_sided": 0.30914440197557946,
+      "ci95": [
+        -0.5213521223194828,
+        0.21335212231947867
+      ],
+      "equivalent": false,
+      "margin": 0.5,
+      "alpha": 0.05,
+      "status": "ok",
+      "mean": 84.178,
+      "std": 0.39270345045593785,
+      "pooled": 0.3166322788346108,
+      "within_pooled": true,
+      "diverged": 0,
+      "paired_failures": [],
+      "invalid_seeds": [],
+      "paired_seeds": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "n_paired_total": 5,
+      "missing_variant_seeds": [],
+      "missing_baseline_seeds": [],
+      "inference_eligible": true,
+      "difference_screen": "not established",
+      "equivalence_established": false,
+      "params": 55052,
+      "verdict": "inconclusive",
+      "dials": {
+        "0": {
+          "l1": [
+            1.5479645102082693
+          ],
+          "l2": [
+            1.4103846095828034
+          ]
+        },
+        "1": {
+          "l1": [
+            1.7100323506645303
+          ],
+          "l2": [
+            1.4283080402592698
+          ]
+        },
+        "2": {
+          "l1": [
+            1.4960783241771096
+          ],
+          "l2": [
+            1.3047314616814385
+          ]
+        },
+        "3": {
+          "l1": [
+            1.555019938844244
+          ],
+          "l2": [
+            1.3734426606464483
+          ]
+        },
+        "4": {
+          "l1": [
+            1.6327212347085664
+          ],
+          "l2": [
+            1.4178801562161962
+          ]
+        }
+      }
+    }
+  ],
+  "gpt": [
+    {
+      "name": "learnc",
+      "n": 3,
+      "delta": -0.0018088000969461355,
+      "se": 0.002127152216800184,
+      "t": -0.8503388157463707,
+      "p_two_sided": 0.4846976600217299,
+      "ci95": [
+        -0.010961197389154067,
+        0.007343597195261796
+      ],
+      "equivalent": true,
+      "margin": 0.05,
+      "alpha": 0.05,
+      "status": "ok",
+      "mean": 1.7427453772117476,
+      "std": 0.001829468013954349,
+      "pooled": 0.0017322503347306677,
+      "within_pooled": false,
+      "diverged": 0,
+      "paired_failures": [],
+      "invalid_seeds": [],
+      "paired_seeds": [
+        0,
+        1,
+        2
+      ],
+      "n_paired_total": 3,
+      "missing_variant_seeds": [],
+      "missing_baseline_seeds": [],
+      "inference_eligible": true,
+      "difference_screen": "not established",
+      "equivalence_established": true,
+      "params": 111362,
+      "verdict": "equivalent within margin",
+      "dials": {
+        "0": {
+          "l1": [
+            1.9589712619781494
+          ],
+          "l2": [
+            1.4028722047805786
+          ]
+        },
+        "1": {
+          "l1": [
+            1.9944789409637451
+          ],
+          "l2": [
+            1.3347089290618896
+          ]
+        },
+        "2": {
+          "l1": [
+            2.0796308517456055
+          ],
+          "l2": [
+            1.3898719549179077
+          ]
+        }
+      }
+    },
+    {
+      "name": "mitsu",
+      "n": 3,
+      "delta": 0.0,
+      "se": 0.0,
+      "t": null,
+      "p_two_sided": null,
+      "ci95": null,
+      "equivalent": null,
+      "margin": 0.05,
+      "alpha": 0.05,
+      "status": "degenerate paired variance",
+      "mean": 1.7445541773086939,
+      "std": 0.0016292419188895647,
+      "pooled": 0.0016292419188895647,
+      "within_pooled": true,
+      "diverged": 0,
+      "paired_failures": [],
+      "invalid_seeds": [],
+      "paired_seeds": [
+        0,
+        1,
+        2
+      ],
+      "n_paired_total": 3,
+      "missing_variant_seeds": [],
+      "missing_baseline_seeds": [],
+      "inference_eligible": false,
+      "difference_screen": "withheld",
+      "equivalence_established": false,
+      "params": 111360,
+      "verdict": "baseline",
+      "dials": {
+        "0": {},
+        "1": {},
+        "2": {}
+      }
+    },
+    {
+      "name": "c=1",
+      "n": 3,
+      "delta": 0.0013934667202599726,
+      "se": 0.003572902702037092,
+      "t": 0.39000970260552775,
+      "p_two_sided": 0.7341458622199133,
+      "ci95": [
+        -0.01397949284378915,
+        0.016766426284309095
+      ],
+      "equivalent": true,
+      "margin": 0.05,
+      "alpha": 0.05,
+      "status": "ok",
+      "mean": 1.7459476440289539,
+      "std": 0.00350842695691532,
+      "pooled": 0.0027352777685526785,
+      "within_pooled": true,
+      "diverged": 0,
+      "paired_failures": [],
+      "invalid_seeds": [],
+      "paired_seeds": [
+        0,
+        1,
+        2
+      ],
+      "n_paired_total": 3,
+      "missing_variant_seeds": [],
+      "missing_baseline_seeds": [],
+      "inference_eligible": true,
+      "difference_screen": "not established",
+      "equivalence_established": true,
+      "params": 111360,
+      "verdict": "equivalent within margin",
+      "dials": {
+        "0": {},
+        "1": {},
+        "2": {}
+      }
+    },
+    {
+      "name": "c=4",
+      "n": 3,
+      "delta": 0.003100156145354971,
+      "se": 0.0008673344173861804,
+      "t": 3.5743492742945393,
+      "p_two_sided": 0.07013704175901335,
+      "ci95": [
+        -0.0006316826532173376,
+        0.006831994943927279
+      ],
+      "equivalent": true,
+      "margin": 0.05,
+      "alpha": 0.05,
+      "status": "ok",
+      "mean": 1.7476543334540489,
+      "std": 0.002400723893596554,
+      "pooled": 0.002051573109049779,
+      "within_pooled": false,
+      "diverged": 0,
+      "paired_failures": [],
+      "invalid_seeds": [],
+      "paired_seeds": [
+        0,
+        1,
+        2
+      ],
+      "n_paired_total": 3,
+      "missing_variant_seeds": [],
+      "missing_baseline_seeds": [],
+      "inference_eligible": true,
+      "difference_screen": "not established",
+      "equivalence_established": true,
+      "params": 111360,
+      "verdict": "equivalent within margin",
+      "dials": {
+        "0": {},
+        "1": {},
+        "2": {}
+      }
+    },
+    {
+      "name": "c=8",
+      "n": 3,
+      "delta": 0.013363055328824647,
+      "se": 0.0024772504508918905,
+      "t": 5.394309373932503,
+      "p_two_sided": 0.03269013820649338,
+      "ci95": [
+        0.0027043069140215686,
+        0.024021803743627723
+      ],
+      "equivalent": true,
+      "margin": 0.05,
+      "alpha": 0.05,
+      "status": "ok",
+      "mean": 1.7579172326375183,
+      "std": 0.001953535443768461,
+      "pooled": 0.0017987120336961373,
+      "within_pooled": false,
+      "diverged": 0,
+      "paired_failures": [],
+      "invalid_seeds": [],
+      "paired_seeds": [
+        0,
+        1,
+        2
+      ],
+      "n_paired_total": 3,
+      "missing_variant_seeds": [],
+      "missing_baseline_seeds": [],
+      "inference_eligible": true,
+      "difference_screen": "worse",
+      "equivalence_established": true,
+      "params": 111360,
+      "verdict": "equivalent within margin",
+      "dials": {
+        "0": {},
+        "1": {},
+        "2": {}
+      }
+    },
+    {
+      "name": "c=0.5",
+      "n": 3,
+      "delta": 0.02008565266927091,
+      "se": 0.0048170877667711555,
+      "t": 4.169667160275578,
+      "p_two_sided": 0.05298710303631578,
+      "ci95": [
+        -0.0006406031598697425,
+        0.040811908498411556
+      ],
+      "equivalent": true,
+      "margin": 0.05,
+      "alpha": 0.05,
+      "status": "ok",
+      "mean": 1.7646398299779646,
+      "std": 0.007586850555381136,
+      "pooled": 0.005487017886792151,
+      "within_pooled": false,
+      "diverged": 0,
+      "paired_failures": [],
+      "invalid_seeds": [],
+      "paired_seeds": [
+        0,
+        1,
+        2
+      ],
+      "n_paired_total": 3,
+      "missing_variant_seeds": [],
+      "missing_baseline_seeds": [],
+      "inference_eligible": true,
+      "difference_screen": "not established",
+      "equivalence_established": true,
+      "params": 111360,
+      "verdict": "equivalent within margin",
+      "dials": {
+        "0": {},
+        "1": {},
+        "2": {}
+      }
+    },
+    {
+      "name": "c=0.25",
+      "n": 3,
+      "delta": 0.030515896329649832,
+      "se": 0.001311328298506426,
+      "t": 23.270981312922757,
+      "p_two_sided": 0.0018414913810300144,
+      "ci95": [
+        0.02487370604648344,
+        0.03615808661281622
+      ],
+      "equivalent": true,
+      "margin": 0.05,
+      "alpha": 0.05,
+      "status": "ok",
+      "mean": 1.7750700736383436,
+      "std": 0.0029906976321083228,
+      "pooled": 0.0024081841247053015,
+      "within_pooled": false,
+      "diverged": 0,
+      "paired_failures": [],
+      "invalid_seeds": [],
+      "paired_seeds": [
+        0,
+        1,
+        2
+      ],
+      "n_paired_total": 3,
+      "missing_variant_seeds": [],
+      "missing_baseline_seeds": [],
+      "inference_eligible": true,
+      "difference_screen": "worse",
+      "equivalence_established": true,
+      "params": 111360,
+      "verdict": "equivalent within margin",
+      "dials": {
+        "0": {},
+        "1": {},
+        "2": {}
+      }
+    }
+  ]
+}

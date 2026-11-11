@@ -1,0 +1,45 @@
+A. Cut-off: where the unit opens, by c
+    c  slope at u=0  half-open at u  tail = u minus  out for u=1  out for u=8
+ 0.25         0.324            0.52            1.25        0.263        6.788
+  0.5         0.237            0.79            1.50        0.227        6.589
+    1         0.151            1.15            2.00        0.178        6.223
+    2         0.086            1.67            3.00        0.124        5.600
+    4         0.046            2.52            5.00        0.077        4.667
+    8         0.024            4.09            9.00        0.044        3.500
+
+B. Noise gate: spikes of height 8 on 10% of positions, unit Gaussian noise everywhere
+            mean out at spikes  rms out elsewhere    ratio
+     input               7.995              0.999      8.0
+      relu               7.995              0.708     11.3
+      gelu               7.995              0.653     12.2
+    c=0.25               6.784              0.386     17.6
+     c=0.5               6.585              0.322     20.5
+       c=1               6.221              0.253     24.6
+       c=2               5.602              0.185     30.4
+       c=4               4.675              0.122     38.2
+       c=8               3.515              0.074     47.5
+
+C. Is c just a bias shift? Largest gap between MITSU_c(u) and MITSU_2(u - (c - 2)), u in [-12, 40]
+   c=0.25  max gap 0.811 at u=+1.56
+   c=0.5   max gap 0.703 at u=+1.93
+   c=1     max gap 0.477 at u=+2.51
+   c=2     max gap 0.000 at u=-12.00
+   c=4     max gap 0.994 at u=+5.39
+   c=8     max gap 3.001 at u=+9.27
+
+D. What the networks chose
+   mnist    one c per layer, l1: 1.53 1.74 1.49 1.47 1.48
+   mnist    one c per layer, l2: 1.55 1.66 1.52 1.46 1.53
+   mnist    one c per unit: mean 94.9400  delta vs mitsu -0.1000  t -0.60  diverged 0
+      l1: 320 units over 5 runs  mean 1.79  spread within a layer (sd) 0.08  range 1.55-2.02  5%-95% 1.65-1.92  below 2: 99%
+      l2: 320 units over 5 runs  mean 1.81  spread within a layer (sd) 0.09  range 1.52-2.14  5%-95% 1.68-1.97  below 2: 98%
+   fashion  one c per layer, l1: 1.55 1.71 1.50 1.56 1.63
+   fashion  one c per layer, l2: 1.41 1.43 1.30 1.37 1.42
+   fashion  one c per unit: mean 84.3800  delta vs mitsu +0.0480  t +0.27  diverged 0
+      l1: 320 units over 5 runs  mean 1.91  spread within a layer (sd) 0.08  range 1.69-2.16  5%-95% 1.78-2.06  below 2: 88%
+      l2: 320 units over 5 runs  mean 1.87  spread within a layer (sd) 0.11  range 1.41-2.17  5%-95% 1.68-2.03  below 2: 90%
+   gpt      one c per layer, l1: 1.96 1.99 2.08
+   gpt      one c per layer, l2: 1.40 1.33 1.39
+   gpt      one c per unit: mean 1.7451  delta vs mitsu +0.0006  t +1.25  diverged 0
+      l1: 768 units over 3 runs  mean 2.00  spread within a layer (sd) 0.13  range 1.61-2.54  5%-95% 1.79-2.21  below 2: 46%
+      l2: 768 units over 3 runs  mean 1.88  spread within a layer (sd) 0.14  range 1.53-2.35  5%-95% 1.64-2.13  below 2: 80%

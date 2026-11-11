@@ -1,0 +1,12 @@
+gpt mitsu                  seed 0  val 1.7436  div 0  params 111360  gmax 3.219  73.7s
+gpt c=0.5                  seed 0  val 1.7540  div 0  params 111360  gmax 3.841  72.6s
+gpt c=4                    seed 0  val 1.7478  div 0  params 111360  gmax 2.903  73.2s
+gpt learnc                 seed 0  val 1.7453  div 0  params 111362  gmax 3.219  74.2s
+gpt c=0.25                 seed 1  val 1.7788  div 0  params 111360  gmax 3.15  72.7s
+gpt c=1                    seed 1  val 1.7415  div 0  params 111360  gmax 2.859  74.7s
+gpt c=8                    seed 1  val 1.7555  div 0  params 111360  gmax 2.526  72.5s
+gpt mitsu                  seed 2  val 1.7432  div 0  params 111360  gmax 2.621  73.6s
+gpt c=0.5                  seed 2  val 1.7685  div 0  params 111360  gmax 3.406  71.0s
+gpt c=4                    seed 2  val 1.7446  div 0  params 111360  gmax 2.32  71.4s
+gpt learnc                 seed 2  val 1.7417  div 0  params 111362  gmax 2.621  73.1s
+WORKER DONE

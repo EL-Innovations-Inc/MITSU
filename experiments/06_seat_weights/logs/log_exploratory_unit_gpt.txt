@@ -1,0 +1,3 @@
+gpt seed 0 val 1.7447 div 0
+gpt seed 1 val 1.7478 div 0
+gpt seed 2 val 1.7429 div 0
