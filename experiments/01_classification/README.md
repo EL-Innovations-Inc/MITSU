@@ -1,3 +1,8 @@
+> Historical experiment report. “Parity” below is the original decision-rule
+> terminology, not a new equivalence-test conclusion. See
+> [v1.0.1 statistical guidance](../../docs/STATISTICS.md) and
+> [the new multi-seed pilot](../05_multiseed_scaling/README.md).
+
 # 01 · Classification
 
 MITSU against ReLU and GELU in small MLPs, and the three-seat ("tri") block against all of

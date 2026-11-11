@@ -1,3 +1,9 @@
+> v1.0.1 adds paired confidence intervals and conservative practical-equivalence
+> decisions in `results/report_v1_0_1.md` and `results/report_v1_0_1_confirm.md`.
+> Run `python analyze.py` (and `python analyze.py _confirm`) to reproduce them.
+> Original tables below retain historical wording; nonsignificance alone does
+> not establish parity. See [STATISTICS.md](../../docs/STATISTICS.md).
+
 # 04 · The dial family — MITSU variants
 
 Every way of filling the three seats of the MITSU mother function, tested against current

@@ -1,3 +1,8 @@
+> Historical experiment report. “Parity” below is the original decision-rule
+> terminology, not a new equivalence-test conclusion. See
+> [v1.0.1 statistical guidance](../../docs/STATISTICS.md) and
+> [the new multi-seed pilot](../05_multiseed_scaling/README.md).
+
 # 02 · Character-GPT twins
 
 Two identical character-level transformers on Tiny Shakespeare that differ in exactly one
