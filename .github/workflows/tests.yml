@@ -1,0 +1,43 @@
+name: tests
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.10", "3.11", "3.12"]
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v6
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Install CPU dependencies and editable package
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install torch --index-url https://download.pytorch.org/whl/cpu
+          python -m pip install -e '.[dev]'
+      - name: Unit tests
+        run: python -m pytest -q
+      - name: Dial-family sanity gate
+        run: python experiments/04_dial_family/gate.py
+      - name: Seat-weights sanity gate
+        run: python experiments/06_seat_weights/gate.py
+      - name: Build wheel and source distribution
+        run: python -m build
+      - name: Verify wheel installation outside source tree
+        run: python scripts/smoke_wheel.py dist/mitsu_activation-1.0.1-py3-none-any.whl
+
+  numpy-only:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - name: Install NumPy-only package and test runner
+        run: python -m pip install -e . pytest
+      - name: Check NumPy operation and optional PyTorch skips
+        run: python -m pytest -q tests/test_mitsu.py
