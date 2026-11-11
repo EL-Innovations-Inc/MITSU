@@ -1,5 +1,0 @@
-# Full development + experiments environment from the source tree.
-# NumPy-only users: pip install .
-# Torch users: pip install '.[torch]'
-# For the exact tested Linux CPU/Python 3.12 snapshot, see requirements-lock-cpu-py312.txt.
--e .[experiments,dev]
