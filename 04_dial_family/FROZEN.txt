@@ -1,0 +1,12 @@
+2026-11-10T19:27:23Z
+6e2ba65b3028487e4015cb4746e5163ddf7dd63c56b2c24d24ce410206dd0ca6  prereg7.md
+a946b155ea1d0a31095bd825e5771aa33e470a451531f662e12a9cf2c763bd4f  variants.py
+74a653dd8819ba09dcfa856a3656fcca6b4a9a741f7aa2fe834460e325ce04f8  bench_cls.py
+816cdb4862a1c5fe144549a4c9531eb82e1ac3a6d8a24e1bc2752113a6af2f6a  bench_gpt.py
+73f59786501f05be14cff8203a912ad115807c8e5171cae281e331baf18e4e76  gate.py
+
+After the runs (2026-11-10): the authorship line at the top of prereg7.md was edited, and one
+command-line separator line changed in each bench script. Nothing else changed. Current hashes:
+9be3faf9df2bbbf23155bfb5b66044527eb8e8e1e05b56be48f8536ae140f251  prereg7.md
+bc83a252d53fbded5487933691bf320aabaecb9960591c3a90520a0943a34835  bench_cls.py
+3e5fea77fd9d8a9f1a233d9ddd46f8c06ef71e91f34e5c6f356279a547ee8656  bench_gpt.py
