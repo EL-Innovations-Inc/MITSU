@@ -1,3 +1,8 @@
+> Historical research proposal, retained from v1.0.0. Hardware costs and run times
+> are unverified planning estimates. No large-model run or stability advantage is
+> established by this document. See [STABILITY.md](STABILITY.md) and experiment 05
+> for the v1.0.1 interpretation and measured scope.
+
 # MITSU-8B — from-scratch pretraining battle plan
 2026-09-01. Rung 3 of the ladder. Goal: a base 8B whose FFN nonlinearity is MITSU,
 exported to GGUF, pulled via `ollama pull evanlittle/mitsu-8b` (~16 GB fp16).

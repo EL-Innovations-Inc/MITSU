@@ -1,26 +1,33 @@
-"""MITSU for PyTorch — drop-in replacement for nn.GELU / nn.SiLU.
+"""Standalone compatibility copy for projects that copy this file directly.
 
-Centered a = b = 1 form:  MITSU(u) = s(s - 1) / (s + 2),  s = softplus(u).
-Derivative bounded in (-0.5, 1). Autograd differentiates the closed form, so
-no custom backward is needed; the math is validated against hand-derived
-gradients (finite-difference checked to ~1e-6) in the numpy twin,
-experiments/02_char_gpt/mitsu_gpt.py.
-
-Usage — nanoGPT (model.py, class MLP):
-    self.gelu = nn.GELU()          # before
-    self.gelu = MITSU()            # after — nothing else changes
-
-The module is stateless and shape-agnostic; softplus is evaluated in the
-tensor's own dtype and is bf16/fp16-safe (F.softplus handles the large-input
-linear regime internally).
+The installable API is ``from mitsu_torch import MITSU, MitsuGLU, mitsu``.
+This snapshot uses the same stable formula and is checked against that API.
+Float16/bfloat16 intermediate arithmetic is promoted to float32, with output
+cast back to input dtype. This is an activation fix, not a guarantee that the
+surrounding GLU or network can never overflow.
 """
-import torch.nn as nn
-import torch.nn.functional as F
+import torch
+from torch import nn
+from torch.nn import functional as F
+
+
+def mitsu(u: torch.Tensor) -> torch.Tensor:
+    """Elementwise s(s-1)/(s+2), s=softplus(u), without an s**2 intermediate.
+
+    Divide before multiplying and promote low-precision intermediates. No
+    input or output clipping is used. Autograd follows these exact operations.
+    Floating tensors are required; output dtype and device match the input.
+    """
+    if not u.is_floating_point():
+        raise TypeError("MITSU expects a floating-point tensor")
+    work = u.float() if u.dtype in (torch.float16, torch.bfloat16) else u
+    s = F.softplus(work)
+    return (s * ((s - 1) / (s + 2))).to(dtype=u.dtype)
 
 
 class MITSU(nn.Module):
-    """Elementwise MITSU activation. No parameters, no buffers."""
+    """Stateless MITSU activation; no parameters or buffers."""
 
-    def forward(self, u):
-        s = F.softplus(u)
-        return s * (s - 1) / (s + 2)
+    def forward(self, u: torch.Tensor) -> torch.Tensor:
+        return mitsu(u)
+

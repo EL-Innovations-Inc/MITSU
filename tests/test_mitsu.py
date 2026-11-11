@@ -67,7 +67,8 @@ def test_derivative_is_bounded():
 
 
 def test_torch_module_matches_reference():
-    torch = pytest.importorskip("torch")
+    pytest.importorskip("torch.nn")  # local torch/ can otherwise look importable without PyTorch
+    import torch
     MITSU = _load("mitsu_torch").MITSU
     u = torch.linspace(-20, 20, 4001, dtype=torch.float64, requires_grad=True)
     y = MITSU()(u)
@@ -78,7 +79,8 @@ def test_torch_module_matches_reference():
 
 
 def test_mitsuglu_is_the_gated_form():
-    torch = pytest.importorskip("torch")
+    pytest.importorskip("torch.nn")  # local torch/ can otherwise look importable without PyTorch
+    import torch
     glu = _load("mitsu_glu")
     torch.manual_seed(0)
     m = glu.MitsuGLU(dim=16, hidden_dim=40, gate_mult=3.04).double()

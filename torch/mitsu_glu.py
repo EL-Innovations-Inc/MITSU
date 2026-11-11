@@ -1,50 +1,45 @@
-"""MitsuGLU — SwiGLU with the SiLU gate transplanted for MITSU.
+"""Standalone compatibility copy for projects that copy this file directly.
 
-Llama-family feed-forward blocks compute  W2( act(W1 x) * W3 x ).  This module
-keeps that exact structure — same three projections, same shapes, same init
-conventions as the host model — and changes only `act`, so a MitsuGLU network
-is a controlled experiment on the nonlinearity alone.
-
-gate_mult
----------
-MITSU is much quieter than SiLU under a standard-normal input diet
-(std ratio ≈ 3.04 measured over z ~ N(0,1); see experiments/03_scaling_ladder,
-where the value is computed and frozen at setup). A fixed post-activation
-multiplier restores the gate's signal variance at init. Tune it ONCE at the
-smallest muP width via coordinate checks, then it transfers up the ladder.
-Set gate_mult = 1.0 to study the raw, uncorrected formula.
+The installable API is ``from mitsu_torch import MITSU, MitsuGLU, mitsu``.
+This snapshot uses the same stable formula and is checked against that API.
+Float16/bfloat16 intermediate arithmetic is promoted to float32, with output
+cast back to input dtype. This is an activation fix, not a guarantee that the
+surrounding GLU or network can never overflow.
 """
 import torch
-import torch.nn as nn
-import torch.nn.functional as F
+from torch import nn
+from torch.nn import functional as F
 
 
 def mitsu(u: torch.Tensor) -> torch.Tensor:
-    """Centered MITSU: s(s - 1)/(s + 2), s = softplus(u). Elementwise."""
-    s = F.softplus(u)
-    return s * (s - 1) / (s + 2)
+    """Elementwise s(s-1)/(s+2), s=softplus(u), without an s**2 intermediate.
+
+    Divide before multiplying and promote low-precision intermediates. No
+    input or output clipping is used. Autograd follows these exact operations.
+    Floating tensors are required; output dtype and device match the input.
+    """
+    if not u.is_floating_point():
+        raise TypeError("MITSU expects a floating-point tensor")
+    work = u.float() if u.dtype in (torch.float16, torch.bfloat16) else u
+    s = F.softplus(work)
+    return (s * ((s - 1) / (s + 2))).to(dtype=u.dtype)
 
 
 class MitsuGLU(nn.Module):
-    """Gated feed-forward: W2( gate_mult * MITSU(W1 x) ⊙ W3 x ).
+    """W2(gate_mult * MITSU(W1 x) * W3 x).
 
-    Args:
-        dim:        model width (input and output features).
-        hidden_dim: FFN width (Llama convention: ~8/3 * dim, rounded).
-        gate_mult:  fixed scalar applied after MITSU on the gate path only.
-        bias:       include biases on the three projections (Llama uses False).
+    gate_mult=1.0 evaluates the raw gate. Approximately 3.04 matches the gate
+    standard deviation to SiLU for standard-normal inputs, as in the pilot.
+    The multiplier scales gate derivatives too; neither the product nor the
+    full block has the raw scalar activation's derivative bound.
     """
 
     def __init__(self, dim: int, hidden_dim: int, gate_mult: float = 1.0, bias: bool = False):
         super().__init__()
-        self.w1 = nn.Linear(dim, hidden_dim, bias=bias)   # gate projection (through MITSU)
-        self.w3 = nn.Linear(dim, hidden_dim, bias=bias)   # up projection (linear path)
-        self.w2 = nn.Linear(hidden_dim, dim, bias=bias)   # down projection
+        self.w1 = nn.Linear(dim, hidden_dim, bias=bias)
+        self.w3 = nn.Linear(dim, hidden_dim, bias=bias)
+        self.w2 = nn.Linear(hidden_dim, dim, bias=bias)
         self.gate_mult = gate_mult
 
     def forward(self, x: torch.Tensor) -> torch.Tensor:
         return self.w2(self.gate_mult * mitsu(self.w1(x)) * self.w3(x))
-
-
-# TorchTitan / Llama patch: construct MitsuGLU(dim, hidden_dim, gate_mult=G)
-# wherever the model builds its SwiGLU FeedForward. Nothing else changes.

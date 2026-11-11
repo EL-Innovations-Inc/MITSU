@@ -1,3 +1,8 @@
+> Historical research proposal, retained from v1.0.0. Hardware costs and run times
+> are unverified planning estimates. No large-model run or stability advantage is
+> established by this document. See [STABILITY.md](STABILITY.md) and experiment 05
+> for the v1.0.1 interpretation and measured scope.
+
 # RING 2 PLAYBOOK — the GPU ladder, step by step
 Prerequisite (Ring 1 handoff): torch repo with MitsuGLU/SwiGLU switch, muP
 parametrization passing coord checks, gate_mult frozen, FineWeb-Edu tokenized
