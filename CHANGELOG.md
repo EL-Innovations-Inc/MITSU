@@ -24,6 +24,17 @@
   CUDA-capable benchmark harness. CPU peak allocator memory remains explicitly
   unavailable; no GPU measurements are invented.
 
+- **Seat-weight experiment:** add experiment 06, a pre-registered test of the
+  constant c in s(s-1)/(s+c) (c = 2 is current MITSU): six fixed values and a
+  learnable c on the experiment-04 benchmarks. No value is confirmed better than
+  c = 2. The v1.0.1 confidence-interval report is included alongside the
+  pre-registered analysis.
+- **Release layout:** built distributions are no longer kept in the source tree
+  (`dist/` is git-ignored); attach the wheel and source archive to the release
+  instead. `SHA256SUMS` now covers exactly the files that are committed, so
+  `scripts/verify_checksums.py` also passes on a git checkout. CI actions are
+  updated to current major versions and can be started manually.
+
 The underlying activation formula is unchanged. The original interactive lab,
 experiments, character-model checkpoints and license remain in the release.
 See VALIDATION.md for the checks actually executed for this ZIP.

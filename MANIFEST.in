@@ -10,4 +10,6 @@ recursive-include experiments *.py *.md *.txt *.sh *.json *.jsonl *.npz *.png Mo
 prune experiments/01_classification/data
 prune experiments/04_dial_family/data
 include experiments/04_dial_family/data/README.md experiments/04_dial_family/data/SHA256.txt
+prune experiments/06_seat_weights/data
+include experiments/06_seat_weights/data/README.md experiments/06_seat_weights/data/SHA256.txt
 global-exclude __pycache__ *.py[cod] .DS_Store

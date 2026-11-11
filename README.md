@@ -23,6 +23,8 @@ activation:      MITSU(u) = s(s-1)/(s+2), s = softplus(u)
 4. A precise explanation of the scaled gate and full-block gradient paths.
 5. An installable versioned package, tested dependency pins, CI, and measured
    timing and tensor-storage benchmarks.
+6. A pre-registered test of the seat-weight constant c in s(s-1)/(s+c), where
+   c = 2 is the current activation (experiment 06).
 
 See [CHANGELOG.md](CHANGELOG.md), [installation](docs/INSTALLATION.md),
 [statistical interpretation](docs/STATISTICS.md), and [stability](docs/STABILITY.md).
@@ -97,6 +99,7 @@ conclusion within a stated margin; it is not inferred merely from p > 0.05.
 | [03 Nano ladder](experiments/03_scaling_ladder) | Four paired sizes, 31,936–483,184 parameters | One seed per size; four points cannot establish an 8B extrapolation |
 | [04 Dial family](experiments/04_dial_family) | 29 variants and 472 historical result records | New post hoc CI reports alongside unchanged historical results |
 | [05 Multi-seed scaling](experiments/05_multiseed_scaling) | 997,632 / 1,756,160 parameters, three paired seeds, 100 / 1,000 steps | Separate correlated horizons; no large-model stability claim |
+| [06 Seat weights](experiments/06_seat_weights) | Six fixed values of c in s(s-1)/(s+c) and a learnable c; 91 pre-registered records | No value confirmed better than c = 2 (current MITSU); small models only |
 | [Performance](benchmarks) | CPU timing and tensor-storage measurements; CUDA-capable harness | Hardware/dtype-specific measurements, no unmeasured GPU claims |
 
 The 1,000-step extension reports the following descriptive paired differences
@@ -112,6 +115,12 @@ defined loss spikes/divergences over this limited exposure. The 100-step pilot
 and extension reuse the same trajectories and are not independent replication.
 See the [full extension report](experiments/05_multiseed_scaling/results/extension/REPORT.md).
 
+MITSU costs more to compute than the built-in gates. On the recorded CPU the bare
+activation's forward pass took 10–16 times as long as SiLU's, a gated feed-forward
+block took 7–52% longer, and the MitsuGLU models of experiment 05 trained about
+20% slower than their SwiGLU twins over 1,000 updates. No GPU timing has been
+measured. See [the benchmark results](benchmarks/RESULTS.md).
+
 Original preregistrations and historical result files remain intact. New
 v1.0.1 analyses are labelled separately; they do not retroactively become
 pre-registered. The experiment 05 local freeze records file hashes before
@@ -125,6 +134,8 @@ python -m pytest -q
 python experiments/04_dial_family/gate.py
 python experiments/04_dial_family/analyze.py
 python experiments/04_dial_family/analyze.py _confirm
+python experiments/06_seat_weights/gate.py
+python experiments/06_seat_weights/analyze_ci.py
 ```
 
 The new analysis writes versioned reports and summaries, preserving historical
@@ -156,6 +167,7 @@ experiments/02_char_gpt/         historical NumPy transformer and checkpoints
 experiments/03_scaling_ladder/   historical four-point nano ladder
 experiments/04_dial_family/      historical variant grid plus v1.0.1 CI reports
 experiments/05_multiseed_scaling/ multi-seed short-horizon pilot and longer-run profile
+experiments/06_seat_weights/     pre-registered test of the seat-weight constant c
 docs/                            installation, statistical and stability explanations
 ```
 

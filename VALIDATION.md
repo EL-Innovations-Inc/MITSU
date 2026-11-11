@@ -8,7 +8,7 @@ CI matrix has not been executed from this workspace.
 ## Software checks
 
 - Full test suite: **48 tests passed** after final integration.
-- Dial-family sanity gate: PASS. The only observed extreme-input nonfinite
+- Dial-family and seat-weight (experiment 06) sanity gates: PASS. For the dial family, the only observed extreme-input nonfinite
   cases were the gate's documented above-one-dial stress cases. No unexpected
   case failed the gate.
 - Historical NumPy transformer gradient checks: MITSU 6.55e-6, GELU 2.71e-6
@@ -63,11 +63,26 @@ for the explicitly counted tensors and do not represent CPU peak allocation.
 Native CPU peaks remain unavailable (`null`). CUDA and compilation support
 are runnable harness features, not shipped accelerator results.
 
+## Second-environment re-check
+
+The final tree was checked again on a second machine: Linux x86_64, CPython
+3.13.18, NumPy 2.5.3, PyTorch 2.15.0+cu132 running on CPU.
+
+- Full test suite: 48 tests passed. Both sanity gates: PASS.
+- Experiment 05 was re-run in full at both horizons (24 runs). Every validation
+  loss, and every per-step training-loss history of the 1,000-update runs, is
+  identical to the shipped records. `audit.py`: all checks PASS.
+- The experiment 04 reanalysis reports and `benchmarks/RESULTS.md` regenerate
+  byte-for-byte from the shipped raw files. Benchmark timings were not re-measured.
+- Wheel and source archive build; the installed-wheel smoke check passes.
+- Experiment 06: the five files frozen before its runs match `FROZEN.txt`.
+
 ## Archive integrity
 
 The complete source ZIP includes the original lab and checkpoints, new code,
-results, documentation, and built distributions. It excludes transient caches
-and build metadata. `SHA256SUMS` covers the release files; after extraction run:
+results and documentation. It excludes transient caches, build metadata and
+built distributions; the wheel and source archive are release attachments, built
+with `python -m build`. `SHA256SUMS` covers the release files; after extraction run:
 
 ```bash
 python scripts/verify_checksums.py
