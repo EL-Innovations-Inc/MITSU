@@ -1,0 +1,26 @@
+fashion gelu                   seed 5  acc  84.12  div 0  params 55050  4.2s
+fashion gelu                   seed 6  acc  84.51  div 0  params 55050  4.1s
+fashion gelu                   seed 7  acc  84.21  div 0  params 55050  4.5s
+fashion gelu                   seed 8  acc  84.37  div 0  params 55050  4.5s
+fashion gelu                   seed 9  acc  84.81  div 0  params 55050  4.2s
+fashion mitsu                  seed 5  acc  85.36  div 0  params 55050  5.2s
+fashion mitsu                  seed 6  acc  84.96  div 0  params 55050  3.6s
+fashion mitsu                  seed 7  acc  83.59  div 0  params 55050  3.8s
+fashion mitsu                  seed 8  acc  84.82  div 0  params 55050  4.1s
+fashion mitsu                  seed 9  acc  84.49  div 0  params 55050  4.0s
+fashion learn01                seed 5  acc  84.80  div 0  params 55054  4.5s
+fashion learn01                seed 6  acc  84.57  div 0  params 55054  5.1s
+fashion learn01                seed 7  acc  84.92  div 0  params 55054  4.3s
+fashion learn01                seed 8  acc  85.24  div 0  params 55054  4.5s
+fashion learn01                seed 9  acc  84.84  div 0  params 55054  4.6s
+fashion log-mitsu              seed 5  acc  84.68  div 0  params 55050  4.5s
+fashion log-mitsu              seed 6  acc  85.01  div 0  params 55050  4.2s
+fashion log-mitsu              seed 7  acc  84.62  div 0  params 55050  3.7s
+fashion log-mitsu              seed 8  acc  84.94  div 0  params 55050  4.2s
+fashion log-mitsu              seed 9  acc  84.50  div 0  params 55050  4.6s
+fashion log-learn01            seed 5  acc  84.13  div 0  params 55054  4.8s
+fashion log-learn01            seed 6  acc  84.47  div 0  params 55054  5.5s
+fashion log-learn01            seed 7  acc  84.30  div 0  params 55054  5.0s
+fashion log-learn01            seed 8  acc  84.96  div 0  params 55054  4.8s
+fashion log-learn01            seed 9  acc  84.81  div 0  params 55054  5.1s
+WORKER DONE

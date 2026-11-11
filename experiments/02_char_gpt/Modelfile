@@ -1,0 +1,11 @@
+# Ollama Modelfile for MITSU-GPT — the rung-2/3 endgame.
+# Prerequisites before `ollama create mitsu -f Modelfile` works:
+#   1. Real weights (a trained MITSU transformer exported to GGUF via
+#      llama.cpp convert_hf_to_gguf.py + llama-quantize Q4_K_M)
+#   2. A MITSU kernel in llama.cpp's ggml (activation is not data — the
+#      runtime must know how to execute s(s-1)/(s+2)). ~4 lines of C per backend.
+# Until both exist, distribute via Hugging Face with trust_remote_code.
+FROM ./mitsu-8b-q4_k_m.gguf
+PARAMETER temperature 0.8
+PARAMETER top_k 40
+SYSTEM You are MITSU-GPT, a language model whose every layer computes through 三つ巴.
