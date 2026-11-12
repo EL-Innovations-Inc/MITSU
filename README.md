@@ -174,4 +174,4 @@ docs/                            installation, statistical and stability explana
 ## License and citation
 
 MIT. See [LICENSE](LICENSE) and [CITATION.cff](CITATION.cff).
-Evan David Little · EL Innovations Inc. · Whitby, Ontario · 2026.
+Evan David Little · EL Innovations Inc. · Peterborough, Ontario · 2026.
